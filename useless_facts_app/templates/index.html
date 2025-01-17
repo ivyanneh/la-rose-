@@ -9,10 +9,17 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin-top: 50px;
+            background-color: #244855; /* Default background color */
         }
+
         .fact {
             font-size: 1.5em;
             margin-top: 20px;
+        }
+
+        /* Additional CSS to style the random background color */
+        .fact {
+            background-color: #FBE9D0; /* A light background for text readability */
         }
     </style>
 </head>
@@ -21,5 +28,19 @@
     <div class="fact">
         <p>{{ fact }}</p>
     </div>
+
+    <script>
+        
+        const colors = ['#244855', '#E64833', '#874F41', '#90AEAD', '#FBE9D0'];
+        
+      
+        function changeBackgroundColor() {
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        
+        window.onload = changeBackgroundColor;
+    </script>
 </body>
 </html>
