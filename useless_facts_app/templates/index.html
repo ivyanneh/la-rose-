@@ -15,11 +15,14 @@
         }
 
         .fact {
-            font-size: 1.5em;
-            margin-top: 20px;
-            background-color: rgba(255, 255, 255, 0.7); /* Light background for text */
+            font-size: 1.2em;
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.8); /* Light background for text */
             padding: 20px;
             border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
 
         /* Animation to make the gradient move */
@@ -34,6 +37,23 @@
                 background-position: 0% 50%;
             }
         }
+
+        /* Button styling */
+        .refresh-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            background-color: #E64833;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .refresh-button:hover {
+            background-color: #c53b28;
+        }
     </style>
 </head>
 <body>
@@ -41,5 +61,7 @@
     <div class="fact">
         <p>{{ fact }}</p>
     </div>
+
+    <button class="refresh-button" onclick="window.location.reload();">Get Another Fact</button>
 </body>
 </html>
