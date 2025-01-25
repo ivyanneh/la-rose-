@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Useless Facts</title>
+    <title>Useless Facts & Memes</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,33 +14,32 @@
             animation: gradientAnimation 10s ease infinite;
         }
 
-        .fact {
+        .fact, .meme {
             font-size: 1.2em;
             width: 80%;
             max-width: 600px;
             margin: 20px auto;
-            background-color: rgba(255, 255, 255, 0.8); /* Light background for text */
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
 
-        /* Animation to make the gradient move */
-        @keyframes gradientAnimation {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
+        img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 10px;
         }
 
-        /* Button styling */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         .refresh-button {
-            margin-top: 20px;
+            margin-top: 10px;
             padding: 10px 20px;
             font-size: 1.2em;
             background-color: #E64833;
@@ -59,9 +58,41 @@
 <body>
     <h1>Random Useless Fact</h1>
     <div class="fact">
-        <p>{{ fact }}</p>
+        <p id="fact-text">{{ fact }}</p>
+        <button class="refresh-button" onclick="fetchNewFact()">Get Another Fact</button>
     </div>
 
-    <button class="refresh-button" onclick="window.location.reload();">Get Another Fact</button>
+    <h1>Random Meme</h1>
+    <div class="meme">
+        <h3 id="meme-title">{{ meme.title }}</h3>
+        <a id="meme-link" href="{{ meme.postLink }}" target="_blank">
+            <img id="meme-img" src="{{ meme.url }}" alt="Meme">
+        </a>
+        <button class="refresh-button" onclick="fetchNewMeme()">Get Another Meme</button>
+    </div>
+
+    <script>
+        // Fetch a new fact and update only the fact section
+        function fetchNewFact() {
+            fetch('/get-fact')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("fact-text").textContent = data.fact;
+            })
+            .catch(error => console.error('Error fetching fact:', error));
+        }
+
+        // Fetch a new meme and update only the meme section
+        function fetchNewMeme() {
+            fetch('/get-meme')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("meme-title").textContent = data.title;
+                document.getElementById("meme-img").src = data.url;
+                document.getElementById("meme-link").href = data.postLink;
+            })
+            .catch(error => console.error('Error fetching meme:', error));
+        }
+    </script>
 </body>
 </html>
