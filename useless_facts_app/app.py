@@ -5,12 +5,11 @@ app = Flask(__name__)
 
 # Function to get a useless fact
 def get_useless_fact():
-    base_url ="https://uselessfacts.jsph.pl/"
-    url = "api/v2/facts/random?language=en"
+    url = "https://uselessfacts.jsph.pl/api/v2/facts/random?language=en"
     response = requests.get(url)
     if response.status_code == 200:
         return response.json()["text"]
-    return response.json()["Could not fetch fact."]
+    return "Could not fetch fact."
 
 # Function to get a random meme
 def get_meme():
