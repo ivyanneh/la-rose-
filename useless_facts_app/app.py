@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 import requests
 
 app = Flask(__name__)  # Instance of Flask
@@ -34,26 +34,10 @@ def get_meme():
     }
 
 @app.route('/')  # Homepage route
-def home():
-    return render_template('index.html')
-
-@app.route('/fact')  # Fact page route
-def fact_page():
-    fact = get_useless_fact()
-    return render_template('fact.html', fact=fact)
-
-@app.route('/meme')  # Meme page route
-def meme_page():
-    meme = get_meme()
-    return render_template('meme.html', meme=meme)
-
-@app.route('/api/fact')  # API endpoint for AJAX fact fetching
-def get_fact_api():
-    return jsonify({"fact": get_useless_fact()})
-
-@app.route('/api/meme')  # API endpoint for AJAX meme fetching
-def get_meme_api():
-    return jsonify(get_meme())
+def index():
+    fact = get_useless_fact()  # Fetch a useless fact
+    meme = get_meme()  # Fetch a random meme
+    return render_template('index.html', fact=fact, meme=meme)  # Send data to HTML
 
 if __name__ == '__main__':  # Run the Flask app
     app.run(debug=True)
