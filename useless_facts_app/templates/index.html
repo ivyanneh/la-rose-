@@ -72,6 +72,7 @@
     </div>
 
     <script>
+        // Fetch a new fact and update only the fact section
         function fetchNewFact() {
             fetch('/get-fact')
             .then(response => response.json())
@@ -81,6 +82,7 @@
             .catch(error => console.error('Error fetching fact:', error));
         }
 
+        // Fetch a new meme and update only the meme section
         function fetchNewMeme() {
             fetch('/get-meme')
             .then(response => response.json())
