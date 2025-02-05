@@ -18,7 +18,19 @@ If you have any issues kindly reach out to me here or on email at ivy,munyao@str
 
 ## Website Screenshots
 
-  Random facts meme               
+home page screenshot
+
+![Image](C:\Users\ivymu\OneDrive\Documents\GitHub\la-rose-\images\home page.png)
+
+
+random facts screenshot
+
+
+
+memes screenshot
+
+
+
 :-----------------------------------------------------:
 
 
