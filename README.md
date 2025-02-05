@@ -18,7 +18,7 @@ If you have any issues kindly reach out to me here or on email at ivy,munyao@str
 
 ## Website Screenshots
 
-  random facts meme 
+  Gallery Characters                   
 :-----------------------------------------------------:
 ![](C:\Users\ivymu\OneDrive\Documents\GitHub\la-rose-\images\Screenshot (101).png) 
 
