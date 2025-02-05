@@ -20,14 +20,17 @@ If you have any issues kindly reach out to me here or on email at ivy,munyao@str
 
 home page screenshot
 
-![Image](C:\Users\ivymu\OneDrive\Documents\GitHub\la-rose-\images\home page.png)
+![home page](https://github.com/user-attachments/assets/6c8e93c0-edd2-4172-9a1b-53ea8087c388)
+
 
 
 random facts screenshot
 
-
+![random facts screenshot](https://github.com/user-attachments/assets/7c09cade-dfe7-4e93-abe7-52e479841192)
 
 memes screenshot
+
+![memes screenshot](https://github.com/user-attachments/assets/73715983-e01f-41aa-9606-7289dc9a3349)
 
 
 
