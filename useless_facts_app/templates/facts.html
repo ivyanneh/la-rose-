@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fun Facts & Memes</title>
+    <title>Random Facts</title>
     <style>
-        /* Body styling */
+        /* Overall body style */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
@@ -21,24 +21,24 @@
             align-items: center;
         }
 
-        @keyframes gradientAnimation {
+        @keyframes gradientBG {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* Navbar styling */
+        /* Navigation Bar */
         .navbar {
             position: absolute;
             top: 10px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(14, 29, 46, 0.8);
+            background: rgba(0, 123, 255, 0.8);
             padding: 12px 20px;
             border-radius: 25px;
             box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
         }
-        
+
         .navbar a {
             color: white;
             text-decoration: none;
@@ -50,11 +50,38 @@
         }
 
         .navbar a:hover {
-            background:rgb(63, 75, 75);
+            background: #0056b3;
         }
+
+        /* Main content container */
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            padding: 40px 60px;
+            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #007bff;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        /* Fact paragraph */
+        #fact {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
         /* Button Styling */
         button {
-            background:#818589;
+            background: #007bff;
             color: white;
             border: none;
             padding: 12px 24px;
@@ -70,48 +97,35 @@
             transform: scale(1.05);
         }
 
-        /* Main content styling */
-        .container {
-            margin-top: 100px;
-            max-width: 800px;
-            width: 90%;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 15px;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 3em;
-            color: #ff6b81;
-            font-weight: bold;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-        }
-
-        p {
-            font-size: 1.3em;
-            opacity: 0.8;
-            line-height: 1.6;
-            color: #555;
-        }
     </style>
 </head>
 <body>
 
-    <!-- Navbar -->
+    <!-- Navigation Bar -->
     <div class="navbar">
         <a href="/">Home</a>
         <a href="/facts">Facts</a>
         <a href="/memes">Memes</a>
     </div>
 
-    <!-- Main content -->
+    <!-- Content Section -->
     <div class="container">
-        <h1>Welcome to Fun Facts & Memes 🎉</h1>
-        <p>Click on the tabs above to explore random useless facts or hilarious memes. Enjoy and have fun!</p>
+        <h1>Random Useless Fact</h1>
+        <p id="fact">{{ fact }}</p>
+        <button onclick="getFact()">🔄 Get New Fact</button>
     </div>
+
+    <!-- JavaScript to fetch facts -->
+    <script>
+        function getFact() {
+            fetch("/get-fact")
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById("fact").innerText = data.fact;
+                })
+                .catch(error => console.error("Error fetching fact:", error));
+        }
+    </script>
 
 </body>
 </html>

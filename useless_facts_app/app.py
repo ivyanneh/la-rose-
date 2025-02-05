@@ -22,16 +22,22 @@ def get_meme():
 
 @app.route("/")
 def home():
-    fact = get_useless_fact()
-    meme = get_meme()
-    return render_template("index.html", fact=fact, meme=meme)
+    return render_template("index.html")
 
-# API to fetch only a new fact
+@app.route("/facts")
+def facts():
+    fact = get_useless_fact()
+    return render_template("facts.html", fact=fact)
+
+@app.route("/memes")
+def memes():
+    meme = get_meme()
+    return render_template("memes.html", meme=meme)
+
 @app.route("/get-fact")
 def fetch_fact():
     return jsonify({"fact": get_useless_fact()})
 
-# API to fetch only a new meme
 @app.route("/get-meme")
 def fetch_meme():
     return jsonify(get_meme())
