@@ -20,15 +20,8 @@ If you have any issues kindly reach out to me here or on email at ivy,munyao@str
 
   Gallery Characters                   
 :-----------------------------------------------------:
-![](C:\Users\ivymu\OneDrive\Documents\GitHub\la-rose-\images\Screenshot (101).png) 
+"C:\Users\ivymu\OneDrive\Documents\GitHub\la-rose-\images\Screenshot (101).png"
 
- 
-
-![](https://github.com/ivyanneh/adv database assignment\images.php\flowchart.jpg) 
- 
-
- "C:\Users\ivymu\OneDrive\Documents\GitHub\adv database assignment\images.php\flowchart.jpg"
- 
 
 
 ## Contributing
